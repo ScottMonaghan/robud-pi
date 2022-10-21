@@ -21,6 +21,6 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [ ] Install Blinka
  - [ ] Install adafruit_motorkit
  - [ ] Install adafruit_servokit
- - [ ] Install pyaudio
+ - [x] Install pyaudio (installed as MyCroft Precise preq)
  - [ ] Install pytweening
  - [ ] Add additional requirements
