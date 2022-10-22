@@ -23,4 +23,6 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] Install adafruit_servokit - pip3 install adafruit-circuitpython-servokit
  - [x] Install pyaudio (installed as MyCroft Precise preq)
  - [x] Install pytweening - pip install pytweening
- - [ ] Add additional requirements
+ - [x] Install bno055 -  pip3 install adafruit-circuitpython-bno055
+ - [x] Install adafruit-circuitpython-vl53l0x (time-of-flight) - pip3 install adafruit-circuitpython-vl53l0x
+ - [x] Install HC S404 Ultrasonic driver - pip3 install adafruit-circuitpython-hcsr04
