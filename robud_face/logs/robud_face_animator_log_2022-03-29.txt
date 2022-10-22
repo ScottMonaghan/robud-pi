@@ -1,0 +1,3 @@
+2022-03-29 19:45:55,068 - INFO: robud_face_animator.py: MQTT Client Connected
+2022-03-29 19:45:55,069 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2022-03-29 20:12:20,307 - INFO: robud_face_animator.py: Exited with Keyboard Interrupt

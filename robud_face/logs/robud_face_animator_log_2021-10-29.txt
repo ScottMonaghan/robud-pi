@@ -1,0 +1,73 @@
+2021-10-29 21:06:37,396 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:06:37,397 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2021-10-29 21:08:22,737 - CRITICAL: robud_face_animator.py: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "robud_face_animator.py", line 87, in <module>
+    robud_face_animator()
+  File "robud_face_animator.py", line 77, in robud_face_animator
+    face_expression = run_animation(
+  File "/home/scott/robud/robud_face/robud_face_common.py", line 271, in run_animation
+    mqtt_client.publish(TOPIC_HEAD_SERVO_ANGLE,face_expression[TOPIC_HEAD_SERVO_ANGLE])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+
+2021-10-29 21:16:35,200 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:16:35,203 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2021-10-29 21:16:40,312 - CRITICAL: robud_face_animator.py: payload must be a string, bytearray, int, float or None.
+Traceback (most recent call last):
+  File "robud_face_animator.py", line 87, in <module>
+    robud_face_animator()
+  File "robud_face_animator.py", line 77, in robud_face_animator
+    face_expression = run_animation(
+  File "/home/scott/robud/robud_face/robud_face_common.py", line 271, in run_animation
+    mqtt_client.publish(TOPIC_HEAD_SERVO_ANGLE,face_expression[HEAD_SERVO_ANGLE])
+  File "/home/scott/.local/lib/python3.8/site-packages/paho/mqtt/client.py", line 1263, in publish
+    raise TypeError(
+TypeError: payload must be a string, bytearray, int, float or None.
+
+2021-10-29 21:18:33,559 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:18:33,560 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2021-10-29 21:18:38,174 - CRITICAL: robud_face_animator.py: payload must be a string, bytearray, int, float or None.
+Traceback (most recent call last):
+  File "robud_face_animator.py", line 87, in <module>
+    robud_face_animator()
+  File "robud_face_animator.py", line 77, in robud_face_animator
+    face_expression = run_animation(
+  File "/home/scott/robud/robud_face/robud_face_common.py", line 272, in run_animation
+    mqtt_client.publish(TOPIC_HEAD_SERVO_ANGLE,face_expression[HEAD_SERVO_ANGLE])
+  File "/home/scott/.local/lib/python3.8/site-packages/paho/mqtt/client.py", line 1263, in publish
+    raise TypeError(
+TypeError: payload must be a string, bytearray, int, float or None.
+
+2021-10-29 21:20:54,783 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:20:54,784 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2021-10-29 21:21:00,614 - CRITICAL: robud_face_animator.py: payload must be a string, bytearray, int, float or None.
+Traceback (most recent call last):
+  File "robud_face_animator.py", line 87, in <module>
+    robud_face_animator()
+  File "robud_face_animator.py", line 77, in robud_face_animator
+    face_expression = run_animation(
+  File "/home/scott/robud/robud_face/robud_face_common.py", line 272, in run_animation
+    mqtt_client.publish(TOPIC_HEAD_SERVO_ANGLE,face_expression[HEAD_SERVO_ANGLE],qos=2)
+  File "/home/scott/.local/lib/python3.8/site-packages/paho/mqtt/client.py", line 1263, in publish
+    raise TypeError(
+TypeError: payload must be a string, bytearray, int, float or None.
+
+2021-10-29 21:22:13,792 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:22:13,794 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2021-10-29 21:22:16,115 - CRITICAL: robud_face_animator.py: payload must be a string, bytearray, int, float or None.
+Traceback (most recent call last):
+  File "robud_face_animator.py", line 87, in <module>
+    robud_face_animator()
+  File "robud_face_animator.py", line 77, in robud_face_animator
+    face_expression = run_animation(
+  File "/home/scott/robud/robud_face/robud_face_common.py", line 273, in run_animation
+    mqtt_client.publish(TOPIC_HEAD_SERVO_ANGLE,face_expression[HEAD_SERVO_ANGLE],qos=2)
+  File "/home/scott/.local/lib/python3.8/site-packages/paho/mqtt/client.py", line 1263, in publish
+    raise TypeError(
+TypeError: payload must be a string, bytearray, int, float or None.
+
+2021-10-29 21:23:05,878 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:23:05,880 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes
+2021-10-29 21:24:18,060 - INFO: robud_face_animator.py: Exited with Keyboard Interrupt
+2021-10-29 21:29:36,660 - INFO: robud_face_animator.py: MQTT Client Connected
+2021-10-29 21:29:36,661 - INFO: robud_face_animator.py: Subcribed to robud/robud_face/keyframes

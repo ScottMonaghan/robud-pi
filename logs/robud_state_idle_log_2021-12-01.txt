@@ -1,0 +1,193 @@
+2021-12-01 20:23:25,565 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 20:23:25,669 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 20:23:25,768 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 20:23:25,837 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 20:23:25,946 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 20:28:06,699 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 20:28:06,797 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 20:28:06,874 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 20:28:06,977 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 20:28:07,053 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 20:31:37,540 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 20:31:37,623 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 20:31:37,720 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 20:31:37,830 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 20:31:37,944 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 20:41:14,760 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 20:41:14,861 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 20:41:14,952 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 20:41:15,018 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 20:41:15,094 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 21:25:45,524 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 21:25:45,621 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 21:25:45,725 - CRITICAL: robud_state_person_interaction.py: 'published_state'
+Traceback (most recent call last):
+  File "/home/scott/robud/robud_state/robud_state_person_interaction.py", line 68, in robud_state_person_interaction
+    publishedState = client_userdata["published_state"]
+KeyError: 'published_state'
+
+2021-12-01 21:26:20,419 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 21:26:20,494 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 21:38:48,681 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 21:38:48,757 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:31:31,772 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:31:31,866 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:31:32,047 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:31:32,145 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:31:32,244 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:31:32,338 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:33:15,663 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:43:17,575 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:43:17,804 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:18,008 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:18,221 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:43:18,405 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:18,576 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:43:34,512 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:43:34,791 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:43:34,791 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:43:35,100 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:35,100 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:35,384 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:35,384 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:35,631 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:43:35,631 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:43:35,868 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:35,868 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:36,149 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:43:36,149 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:43:36,476 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 22:43:36,476 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 22:43:36,791 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:43:36,791 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:43:37,155 - INFO: robud_state_person_interaction.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:37,155 - INFO: robud_state_person_interaction.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:37,525 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_face/animation_frame
+2021-12-01 22:43:37,525 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_face/animation_frame
+2021-12-01 22:43:37,936 - INFO: robud_state_person_interaction.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:37,936 - INFO: robud_state_person_interaction.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:38,326 - INFO: robud_state_person_interaction.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:38,326 - INFO: robud_state_person_interaction.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:38,739 - INFO: robud_state_person_interaction.py: Initial animation
+2021-12-01 22:43:38,739 - INFO: robud_state_person_interaction.py: Initial animation
+2021-12-01 22:43:54,269 - INFO: robud_state_person_interaction.py: PERSON_DETECTION_TIMEOUT reached. Returning to ROBUD_STATE_IDLE
+2021-12-01 22:43:54,269 - INFO: robud_state_person_interaction.py: PERSON_DETECTION_TIMEOUT reached. Returning to ROBUD_STATE_IDLE
+2021-12-01 22:43:54,781 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:43:54,781 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:43:54,781 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:43:55,265 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:55,265 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:55,265 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:43:55,764 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:55,764 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:55,764 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:43:56,250 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:43:56,250 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:43:56,250 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:43:56,719 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:56,719 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:56,719 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:43:57,214 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:43:57,214 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:43:57,214 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:45:08,346 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:45:08,530 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:45:08,684 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:45:08,863 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:45:09,055 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:45:09,203 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:47:05,951 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:47:06,046 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:47:06,151 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:47:06,240 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:47:06,336 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:47:06,415 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:47:30,726 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:47:55,157 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:47:55,346 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:47:55,511 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:47:55,673 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:47:55,845 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:47:56,039 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:48:33,113 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:48:33,303 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:48:33,490 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:48:33,662 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:48:33,854 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:48:34,046 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:49:50,339 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:49:50,552 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:49:50,778 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:49:50,942 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:49:51,133 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:49:51,363 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:50:40,179 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:50:41,507 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 22:50:41,810 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:50:42,155 - INFO: robud_state_person_interaction.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:50:42,421 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_face/animation_frame
+2021-12-01 22:50:42,652 - INFO: robud_state_person_interaction.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:50:42,947 - INFO: robud_state_person_interaction.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:50:43,227 - INFO: robud_state_person_interaction.py: Initial animation
+2021-12-01 22:50:53,790 - INFO: robud_state_person_interaction.py: PERSON_DETECTION_TIMEOUT reached. Returning to ROBUD_STATE_IDLE
+2021-12-01 22:50:55,332 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:50:55,332 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:50:55,667 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:50:55,667 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:50:56,054 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:50:56,054 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:50:56,412 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:50:56,412 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:50:56,805 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:50:56,805 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:50:57,192 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:50:57,192 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:52:56,089 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:52:56,284 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:52:56,462 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:52:56,629 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:52:56,808 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:52:56,993 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:53:24,110 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:53:24,294 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:53:24,481 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:53:24,673 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:53:24,833 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:53:25,010 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:54:07,642 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:54:35,871 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 22:54:36,160 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:54:36,446 - INFO: robud_state_person_interaction.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:54:36,715 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_face/animation_frame
+2021-12-01 22:54:37,016 - INFO: robud_state_person_interaction.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:54:37,307 - INFO: robud_state_person_interaction.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:54:37,599 - INFO: robud_state_person_interaction.py: Initial animation
+2021-12-01 22:54:51,886 - INFO: robud_state_person_interaction.py: PERSON_DETECTION_TIMEOUT reached. Returning to ROBUD_STATE_IDLE
+2021-12-01 22:55:02,535 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:55:02,535 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-01 22:55:02,918 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:55:02,918 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:55:03,294 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:55:03,294 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:55:03,671 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:55:03,671 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-01 22:55:04,060 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:55:04,060 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:55:04,457 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:55:04,457 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-01 22:55:06,776 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:55:06,776 - INFO: robud_state_idle.py: PERSON DETECTED, changing to ROBUD_STATE_PERSON_INTERACTION
+2021-12-01 22:55:24,612 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 22:55:24,612 - INFO: robud_state_person_interaction.py: MQTT Client Connected
+2021-12-01 22:55:25,151 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:55:25,151 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_state
+2021-12-01 22:55:25,655 - INFO: robud_state_person_interaction.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:55:25,655 - INFO: robud_state_person_interaction.py: Subcribed to robud/motors/head_servo/angle
+2021-12-01 22:55:26,166 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_face/animation_frame
+2021-12-01 22:55:26,166 - INFO: robud_state_person_interaction.py: Subcribed to robud/robud_face/animation_frame
+2021-12-01 22:55:26,659 - INFO: robud_state_person_interaction.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:55:26,659 - INFO: robud_state_person_interaction.py: Subcribed to robud/ai/object_detection/detections
+2021-12-01 22:55:27,144 - INFO: robud_state_person_interaction.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:55:27,144 - INFO: robud_state_person_interaction.py: Subcribed to robud/sensors/tof/range
+2021-12-01 22:55:27,606 - INFO: robud_state_person_interaction.py: Initial animation
+2021-12-01 22:55:27,606 - INFO: robud_state_person_interaction.py: Initial animation

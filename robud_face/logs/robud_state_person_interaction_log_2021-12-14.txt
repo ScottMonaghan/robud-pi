@@ -1,0 +1,7 @@
+2021-12-14 21:57:40,462 - INFO: robud_state_idle.py: MQTT Client Connected
+2021-12-14 21:57:40,601 - INFO: robud_state_idle.py: Subcribed to robud/robud_state
+2021-12-14 21:57:40,733 - INFO: robud_state_idle.py: Starting ROBUD_STATE_IDLE
+2021-12-14 21:57:40,878 - INFO: robud_state_idle.py: Subcribed to robud/ai/object_detection/detections
+2021-12-14 21:57:41,029 - INFO: robud_state_idle.py: Subcribed to robud/sensors/tof/range
+2021-12-14 21:57:41,163 - INFO: robud_state_idle.py: Subcribed to robud/sensors/light_level
+2021-12-14 21:57:41,301 - INFO: robud_state_idle.py: Subcribed to robud/motors/head_servo/angle

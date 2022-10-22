@@ -1,0 +1,5 @@
+2022-07-14 12:28:15,626 - INFO: robud_face.py: MQTT Client Connected
+2022-07-14 12:28:15,675 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2022-07-14 12:28:15,727 - INFO: robud_face.py: Subcribed torobud/robud_voice/text_input
+2022-07-14 12:28:15,787 - INFO: robud_face.py: Subcribed torobud/robud_face/enable_blink
+2022-07-14 12:28:26,797 - INFO: robud_face.py: Toggle Fullscrreen

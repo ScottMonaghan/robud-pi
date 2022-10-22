@@ -1,0 +1,5 @@
+2022-03-30 20:14:16,862 - INFO: robud_face.py: MQTT Client Connected
+2022-03-30 20:14:16,988 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2022-03-30 20:14:17,129 - INFO: robud_face.py: Subcribed torobud/robud_voice/text_input
+2022-03-30 20:14:17,246 - INFO: robud_face.py: Subcribed torobud/robud_face/enable_blink
+2022-03-30 23:20:45,795 - INFO: robud_face.py: Exiting Normally

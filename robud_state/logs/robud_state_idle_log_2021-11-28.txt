@@ -1,0 +1,6 @@
+2021-11-28 13:05:21,084 - CRITICAL: robud_state_idle.py: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "robud_state_idle.py", line 182, in <module>
+    face_expression, change_expression = move_eyes(
+ValueError: too many values to unpack (expected 2)
+

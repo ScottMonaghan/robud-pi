@@ -1,0 +1,41 @@
+2021-11-29 22:10:58,011 - INFO: light_level.py: Starting
+2021-11-29 22:10:58,330 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:10:58,417 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:34:50,079 - INFO: light_level.py: Starting
+2021-11-29 22:34:50,379 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:34:50,468 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:34:50,562 - CRITICAL: light_level.py: OpenCV(3.4.13) /tmp/pip-req-build-lcy9d57p/opencv/modules/imgproc/src/color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cvtColor'
+
+Traceback (most recent call last):
+  File "light_level.py", line 81, in <module>
+    grayscale_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+cv2.error: OpenCV(3.4.13) /tmp/pip-req-build-lcy9d57p/opencv/modules/imgproc/src/color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cvtColor'
+
+
+2021-11-29 22:35:59,294 - INFO: light_level.py: Starting
+2021-11-29 22:35:59,456 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:35:59,541 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:36:58,886 - INFO: light_level.py: Starting
+2021-11-29 22:36:59,035 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:36:59,138 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:44:09,354 - INFO: light_level.py: Starting
+2021-11-29 22:44:09,582 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:44:09,664 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:44:59,351 - INFO: light_level.py: Starting
+2021-11-29 22:44:59,557 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:44:59,630 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:45:50,034 - INFO: light_level.py: Starting
+2021-11-29 22:45:50,235 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:45:50,322 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:46:30,089 - INFO: light_level.py: Starting
+2021-11-29 22:46:30,598 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:46:30,687 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:46:58,346 - INFO: light_level.py: Starting
+2021-11-29 22:46:58,524 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:46:58,596 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:48:00,781 - INFO: light_level.py: Starting
+2021-11-29 22:48:01,026 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:48:01,107 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw
+2021-11-29 22:57:50,476 - INFO: light_level.py: Starting
+2021-11-29 22:57:50,826 - INFO: light_level.py: MQTT Client Connected
+2021-11-29 22:57:50,892 - INFO: light_level.py: Subcribed to robud/sensors/camera/raw

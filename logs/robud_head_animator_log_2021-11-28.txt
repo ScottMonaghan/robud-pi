@@ -1,0 +1,6 @@
+2021-11-28 12:35:47,233 - INFO: robud_head_animator.py: MQTT Client Connected
+2021-11-28 12:35:47,303 - INFO: robud_head_animator.py: Subcribed to robud/robud_head/keyframes
+2021-11-28 12:36:00,649 - INFO: robud_head_animator.py: Exited with Keyboard Interrupt
+2021-11-28 13:01:28,021 - INFO: robud_head_animator.py: MQTT Client Connected
+2021-11-28 13:01:28,118 - INFO: robud_head_animator.py: Subcribed to robud/robud_head/keyframes
+2021-11-28 13:46:01,440 - INFO: robud_head_animator.py: Exited with Keyboard Interrupt

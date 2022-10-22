@@ -1,0 +1,17 @@
+2022-08-31 18:22:16,350 - INFO: robud_face.py: MQTT Client Connected
+2022-08-31 18:22:16,386 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2022-08-31 18:22:16,420 - INFO: robud_face.py: Subcribed torobud/robud_voice/text_input
+2022-08-31 18:22:16,460 - INFO: robud_face.py: Subcribed torobud/robud_face/enable_blink
+2022-08-31 18:22:32,928 - INFO: robud_face.py: pressed CTRL-C as an event
+2022-08-31 18:22:32,966 - INFO: robud_face.py: Exiting Normally
+2022-08-31 18:22:45,913 - INFO: robud_face.py: MQTT Client Connected
+2022-08-31 18:22:45,958 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2022-08-31 18:22:45,997 - INFO: robud_face.py: Subcribed torobud/robud_voice/text_input
+2022-08-31 18:22:46,056 - INFO: robud_face.py: Subcribed torobud/robud_face/enable_blink
+2022-08-31 18:22:57,666 - INFO: robud_face.py: pressed CTRL-C as an event
+2022-08-31 18:22:57,766 - INFO: robud_face.py: Exiting Normally
+2022-08-31 18:23:05,475 - INFO: robud_face.py: MQTT Client Connected
+2022-08-31 18:23:05,513 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2022-08-31 18:23:05,573 - INFO: robud_face.py: Subcribed torobud/robud_voice/text_input
+2022-08-31 18:23:05,613 - INFO: robud_face.py: Subcribed torobud/robud_face/enable_blink
+2022-08-31 18:23:17,100 - INFO: robud_face.py: Toggle Fullscrreen

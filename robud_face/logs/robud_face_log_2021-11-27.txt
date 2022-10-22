@@ -1,0 +1,13 @@
+2021-11-27 15:20:03,981 - INFO: robud_face.py: MQTT Client Connected
+2021-11-27 15:20:04,079 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2021-11-27 15:20:18,384 - INFO: robud_face.py: Toggle Fullscrreen
+2021-11-27 15:36:55,062 - INFO: robud_face.py: Exiting Normally
+2021-11-27 15:37:27,503 - INFO: robud_face.py: MQTT Client Connected
+2021-11-27 15:37:27,504 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2021-11-27 15:37:31,523 - INFO: robud_face.py: Toggle Fullscrreen
+2021-11-27 15:38:05,145 - INFO: robud_face.py: MQTT Client Connected
+2021-11-27 15:38:05,146 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2021-11-27 15:38:08,521 - INFO: robud_face.py: Toggle Fullscrreen
+2021-11-27 22:28:34,748 - INFO: robud_face.py: MQTT Client Connected
+2021-11-27 22:28:34,752 - INFO: robud_face.py: Subcribed torobud/robud_face/animation_frame
+2021-11-27 23:01:13,656 - INFO: robud_face.py: Exiting Normally
