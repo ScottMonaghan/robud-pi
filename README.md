@@ -26,3 +26,8 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] Install bno055 -  pip3 install adafruit-circuitpython-bno055
  - [x] Install adafruit-circuitpython-vl53l0x (time-of-flight) - pip3 install adafruit-circuitpython-vl53l0x
  - [x] Install HC S404 Ultrasonic driver - pip3 install adafruit-circuitpython-hcsr04
+ - [x] Install VNC Server - sudo apt-get install realvnc-vnc-server
+ - [x] Configure VNC Server 
+   - sudo raspi-config
+   - enable VNC
+   - set VNC resolution
