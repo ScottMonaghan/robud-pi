@@ -3,6 +3,9 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
 
 # Set-up Steps (draft outline)
  - [X] Install 64bit RaspberryPi OS (for tensorflow)
+   - hostname: robud.local
+   - username: robud
+   - password: your choice 
  - [X] Install Mosquitto - sudo apt install mosquitto mosquitto-clients
  - [X] Install paho.mqtt pip install paho-mqtt
  - [X] Install OpenCV - sudo apt install python3-opencv -y
