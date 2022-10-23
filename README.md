@@ -33,7 +33,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - set VNC resolution
  - [x] Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
  - [x] Rename folder - mv robud-pi robud
- - [x] Set PYTHONPATH evn variable - export PYTHONPATH="/home/robud
+ - [x] Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
  - [x] Install VSCODE - sudo apt install code
  - [x] Configure mosquitto
    - sudo nano /etc/mosquitto/mosquitto.conf
