@@ -31,3 +31,13 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - sudo raspi-config
    - enable VNC
    - set VNC resolution
+ - [x] Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
+ - [x] Rename folder - mv robud-pi robud
+ - [x] Set PYTHONPATH evn variable - export PYTHONPATH="/home/robud
+ - [x] Install VSCODE - sudo apt install code
+ - [x] Configure mosquitto
+   - sudo nano /etc/mosquitto/mosquitto.conf
+   - Add these lines and save
+     - allow_anonomous true
+     - listener 1883 0.0.0.0
+   - sudo systemctl restart moquitto.service
