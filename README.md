@@ -39,7 +39,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] PYTHONPATH to robud source 
    - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
    - log out and log back in
- - [ ] [x] Install VSCODE - sudo apt install code
+ - [x] Install VSCODE - sudo apt install code
  - [x] Configure mosquitto
    - sudo nano /etc/mosquitto/mosquitto.conf
    - Add these lines and save
