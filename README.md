@@ -33,8 +33,10 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - set VNC resolution
  - [x] Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
  - [x] Rename folder - mv robud-pi robud
- - [x] Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
- - [x] Install VSCODE - sudo apt install code
+ - [x] PYTHONPATH to robud source 
+   - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
+   - log out and log back in
+ - [ ] [x] Install VSCODE - sudo apt install code
  - [x] Configure mosquitto
    - sudo nano /etc/mosquitto/mosquitto.conf
    - Add these lines and save
@@ -42,5 +44,5 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
      - listener 1883 0.0.0.0
    - sudo systemctl restart moquitto.service
  - [x]Blink Test 
-   - python3 /home/robud/robud_face/robud_face.py
+   - python3 /home/robud/robud/robud_face/robud_face.py
    - ctrl-F to exit fullscreen
