@@ -41,3 +41,6 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
      - allow_anonomous true
      - listener 1883 0.0.0.0
    - sudo systemctl restart moquitto.service
+ - [x]Blink Test 
+   - python3 /home/robud/robud_face/robud_face.py
+   - ctrl-F to exit fullscreen
