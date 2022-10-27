@@ -49,3 +49,5 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] Blink Test 
    - python3 /home/robud/robud/robud_face/robud_face.py
    - ctrl-F to exit fullscreen
+ - [x] Install Adafruit Platform Detect - pip3 install Adafruit-PlatformDetect
+ - [x] Disable Hardware Accelleration on VSCODE - https://ratticon.com/how-to-fix-slow-visual-studio-code-on-raspberry-pi-4/
