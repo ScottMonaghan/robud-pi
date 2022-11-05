@@ -51,3 +51,9 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - ctrl-F to exit fullscreen
  - [x] Install Adafruit Platform Detect - pip3 install Adafruit-PlatformDetect
  - [x] Disable Hardware Accelleration on VSCODE - https://ratticon.com/how-to-fix-slow-visual-studio-code-on-raspberry-pi-4/
+ - [ ] Set up UDEV rules so python can access respeaker through USB
+   - sudo nano /etc/udev/rules.d/60-respeaker.rules
+   - add line
+     - SUBSYSTEM=="usb", ATTR{idProduct}=="0018", ATTR{idVendor}=="2886", MODE:="0666"
+   - sudo systemctl restart udev
+   - reconnect respeaker
