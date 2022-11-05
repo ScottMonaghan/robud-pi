@@ -17,7 +17,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - wget https://github.com/MycroftAI/mycroft-precise/releases/download/v0.3.0/precise-engine_0.3.0_aarch64.tar.gz
    - tar xvf precise-engine_0.3.0_aarch64.tar.gz
    - sudo pip3 install precise-runner
-   - TODO: Download models
+   - wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb -P /home/robud/robud/ai/wakeword_detection/models/hey-mycroft.pb
  - [X] Install Coqui STT
    - wget https://github.com/coqui-ai/STT/releases/download/v1.4.0/stt-1.4.0-cp39-cp39-linux_aarch64.whl
    - pip install stt-1.4.0-cp39-cp39-linux_aarch64.whl
