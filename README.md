@@ -12,16 +12,16 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [X] Install TensorFlow 2.10 - https://github.com/PINTO0309/Tensorflow-bin
  - [X] Install eSpeak-ng - sudo apt-get install espeak-ng
  - [X] Install Librosa - pip install librosa
- - [X] Install MyCroft Precise
-   - sudo apt install portaudio19-dev python3-pyaudio
-   - wget https://github.com/MycroftAI/mycroft-precise/releases/download/v0.3.0/precise-engine_0.3.0_aarch64.tar.gz
-   - tar xvf precise-engine_0.3.0_aarch64.tar.gz
-   - sudo pip3 install precise-runner
-   - wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb -P /home/robud/robud/ai/wakeword_detection/models/
-   - wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb.params -P /home/robud/robud/ai/wakeword_detection/models/
- - [X] Install Coqui STT
-   - wget https://github.com/coqui-ai/STT/releases/download/v1.4.0/stt-1.4.0-cp39-cp39-linux_aarch64.whl
-   - pip install stt-1.4.0-cp39-cp39-linux_aarch64.whl
+ - [X]~~Install MyCroft Precise~~
+   - ~~sudo apt install portaudio19-dev python3-pyaudio~~
+   - ~~wget https://github.com/MycroftAI/mycroft-precise/releases/download/v0.3.0/precise-engine_0.3.0_aarch64.tar.gz~~
+   - ~~tar xvf precise-engine_0.3.0_aarch64.tar.gz~~
+   - ~~sudo pip3 install precise-runner~~
+   - ~~wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb -P /home/robud/robud/ai/wakeword_detection/models/~~
+   - ~~wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb.params -P /home/robud/robud/ai/wakeword_detection/models/~~
+ - [X] ~~Install Coqui STT~~
+   - ~~wget https://github.com/coqui-ai/STT/releases/download/v1.4.0/stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
+   - ~~pip install stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
  - [x] Install Blinka - pip3 install Adafruit-Blinka
  - [x] Install adafruit_motorkit - pip3 install adafruit-circuitpython-motorkit
  - [x] Install adafruit_servokit - pip3 install adafruit-circuitpython-servokit
