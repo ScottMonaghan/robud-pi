@@ -22,9 +22,17 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] ~~Install Coqui STT~~
    - ~~wget https://github.com/coqui-ai/STT/releases/download/v1.4.0/stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
    - ~~pip install stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
- - [ ] Install Vosk
-   - [ ] Download Small English Model
-   - [ ] Download Speaker Identification Model
+ - [x] Install Vosk
+   - [x] pip3 install vosk
+   - [x] navigate to ~/robud/ai/stt/models (create folder if not created)
+   - [x] Download Small English Model
+     - wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+     - unzip vosk-model-small-en-us-0.15.zip
+     - rm vosk-model-small-en-us-0.15.zip
+   - [x] Download Speaker Identification Model
+     - wget https://alphacephei.com/vosk/models/vosk-model-spk-0.4.zip
+     - unzip vosk-model-spk-0.4.zip
+     - rm vosk-model-spk-0.4.zip
  - [x] Install Blinka - pip3 install Adafruit-Blinka
  - [x] Install adafruit_motorkit - pip3 install adafruit-circuitpython-motorkit
  - [x] Install adafruit_servokit - pip3 install adafruit-circuitpython-servokit
