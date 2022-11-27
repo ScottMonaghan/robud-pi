@@ -22,6 +22,9 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] ~~Install Coqui STT~~
    - ~~wget https://github.com/coqui-ai/STT/releases/download/v1.4.0/stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
    - ~~pip install stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
+ - [ ] Install Vosk
+   - [ ] Download Small English Model
+   - [ ] Download Speaker Identification Model
  - [x] Install Blinka - pip3 install Adafruit-Blinka
  - [x] Install adafruit_motorkit - pip3 install adafruit-circuitpython-motorkit
  - [x] Install adafruit_servokit - pip3 install adafruit-circuitpython-servokit
