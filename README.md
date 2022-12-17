@@ -70,15 +70,17 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - sudo systemctl restart udev
    - reconnect respeaker
   - [ ] Set up Services
-    - sudo cp /home/robud/robud/services/robud.motors.motors.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.robud_audio.robud_audio.service  /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.robud_face.robud_face_animator.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.robud_head.robud_head_animator.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.robud_logging.robud_logger.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.robud_questions.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.robud_voice_text_input.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.sensors.orientation.service /usr/lib/systemd
-    - sudo cp /home/robud/robud/services/robud.sensors.tof.service /usr/lib/systemd
+    - sudo cp /home/robud/robud/services/robud.motors.motors.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.robud_audio.robud_audio.service  /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.robud_face.robud_face_animator.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.robud_head.robud_head_animator.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.robud_logging.robud_logger.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.robud_questions.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.robud_voice_text_input.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.sensors.orientation.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.sensors.tof.service /etc/systemd/system
+    - sudo systemctl daemon-reload
+    - sudo systemctl enable robud.*
     - The following services need changes still to work RPi 17-Dec-2022
       - pulseaudio.service
       - robud.ai.object_detection.service
@@ -89,7 +91,8 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
       - robud.sensors.light_level.service
       - robud.sensors.odometry.service
       - robud.sensors.ultrasonics.service
-    - Enable services
+    - [ ]Enable services
+      -  
       
 
 
