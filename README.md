@@ -100,7 +100,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
         [Desktop Entry]
         Name=robud
         Exec=/home/robud/robud/robud_startup.sh
-        Terminal=true
+        Terminal=false
         Type=Application
         ```
       
