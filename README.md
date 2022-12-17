@@ -93,6 +93,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
       - robud.sensors.ultrasonics.service
     - [ ] set up graphical autostart
       - mkdir /home/robud/.config/autostart
+      - cp /home/robud/robud/robud_startup.sh /home/robud/.config/autostart
       
       
 
