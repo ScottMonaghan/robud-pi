@@ -69,9 +69,9 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
      - SUBSYSTEM=="usb", ATTR{idProduct}=="0018", ATTR{idVendor}=="2886", MODE:="0666"
    - sudo systemctl restart udev
    - reconnect respeaker
-  - [ ] Set up Services
+  - [x] Set up Services
     - sudo cp /home/robud/robud/services/robud.motors.motors.service /etc/systemd/system
-    - sudo cp /home/robud/robud/services/robud.robud_audio.robud_audio.service  /etc/systemd/system
+    - ~~sudo cp /home/robud/robud/services/robud.robud_audio.robud_audio.service  /etc/systemd/system~~
     - sudo cp /home/robud/robud/services/robud.robud_face.robud_face_animator.service /etc/systemd/system
     - sudo cp /home/robud/robud/services/robud.robud_head.robud_head_animator.service /etc/systemd/system
     - sudo cp /home/robud/robud/services/robud.robud_logging.robud_logger.service /etc/systemd/system
@@ -91,8 +91,9 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
       - robud.sensors.light_level.service
       - robud.sensors.odometry.service
       - robud.sensors.ultrasonics.service
-    - [ ]Enable services
-      -  
+    - [ ] set up graphical autostart
+      - mkdir /home/robud/.config/autostart
+      
       
 
 
