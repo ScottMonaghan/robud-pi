@@ -10,7 +10,7 @@ Environment=LD_LIBRARY_PATH=/usr/lib/
 Type=simple
 WorkingDirectory=/home/robud/
 User=robud
-ExecStart=/usr/bin/python3.7 /home/robud/robud/robud_voice/robud_voice.py -o '/home/robud/ro>
+ExecStart=/usr/bin/python3 /home/robud/robud/robud_voice/robud_voice.py -o '/home/robud/ro>
 Restart=on-failure
 
 [Install]
