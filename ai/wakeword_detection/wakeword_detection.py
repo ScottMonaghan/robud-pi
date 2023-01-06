@@ -15,6 +15,8 @@ from robud.ai.wakeword_detection.wakeword_detection_config import(
     , CHUNK
     , SENSITIVITY
     , TRIGGER_LEVEL
+    , PRECISE_EXE_PATH
+    , PRECISE_MODEL_PATH
 )
 from robud.ai.wakeword_detection.wakeword_detection_common import(
      TOPIC_WAKEWORD_DETECTED
@@ -87,7 +89,7 @@ try:
     logger.info('Waiting for messages...')
     
     #initialize precise engine
-    engine = PreciseEngine('/home/robud/Downloads/precise-engine/precise-engine', '/home/robud/src/precise-data/hey-mycroft.pb')
+    engine = PreciseEngine(PRECISE_EXE_PATH, PRECISE_MODEL_PATH)
     detector = TriggerDetector(CHUNK, SENSITIVITY, TRIGGER_LEVEL)
     engine.start()
 

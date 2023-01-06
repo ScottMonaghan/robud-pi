@@ -1,4 +1,3 @@
-from copyreg import remove_extension
 from robud.ai.stt.stt_config import (
     MQTT_BROKER_ADDRESS 
     ,AUDIO_INPUT_INDEX 
@@ -24,11 +23,12 @@ import sys
 import paho.mqtt.client as mqtt
 import time
 import stt
+from vosk import Model, KaldiRecognizer
 import numpy as np
 #import pyaudio
 import wave
 import webrtcvad
-from halo import Halo
+#from halo import Halo
 from scipy import signal
 import threading, collections, queue, os.path
 from robud.robud_voice.robud_voice_common import TOPIC_ROBUD_VOICE_TEXT_INPUT
@@ -70,70 +70,64 @@ logger.level = LOGGING_LEVEL
 
 try:
     # ToDo:
-    #   [] change on_message_stt_request to basic trigger
-    #   [] Respond to speech input messages, but only process if triggered 
-    #       [] Subscribe to speech input   
+    #   [ ] Change to use VOSK
+    #   [ ] Update trigger to any speech detection
 
     input_audio = b''
 
     def on_message_stt_request(client:mqtt.Client, userdata,message):
+        # ToDo
+        #   [ ] Modify from STT to VOSK
         logger.info("stt request received")
         userdata["stt_triggered"] = True
-        model:stt.Model = userdata["model"]
-        userdata["stream_context"] = model.createStream()
+        # model:stt.Model = userdata["model"]
+        # userdata["stream_context"] = model.createStream()
+        model = userdata["model"]
+        userdata["rec"] = KaldiRecognizer(model, SAMPLE_RATE) 
         userdata["input_audio"] = b''
         return
     
     def on_message_speech_input_data(client:mqtt.Client, userdata, message:mqtt.MQTTMessage):
-        if userdata["stt_triggered"] and userdata["stream_context"]:
+        # ToDo
+        #   [ ] Modify from STT to VOSK
+        if userdata["stt_triggered"] and userdata["rec"]:
             #logger.debug("Speech input received")
-            stream_context:stt.Stream = userdata["stream_context"]
-            stream_context.feedAudioContent(np.frombuffer(message.payload, np.int16))
+            # stream_context:stt.Stream = userdata["stream_context"]
+            # stream_context.feedAudioContent(np.frombuffer(message.payload, np.int16))
             userdata["input_audio"] = userdata["input_audio"] + message.payload
+            rec = userdata["rec"]
+            if rec.AcceptWaveform(message.payload):
+                print (rec.Result())
+            else:
+               print(rec.PartialResult())
         return
 
     def on_message_speech_input_complete(client:mqtt.Client, userdata, message:mqtt.MQTTMessage):
-        if userdata["stt_triggered"] and userdata["stream_context"]:
+        # ToDo
+        #   [ ] Modify from STT to VOSK
+        if userdata["stt_triggered"] and userdata["rec"]:
             logger.info("Speech input Complete. Processing...")
-            stream_context:stt.Stream = userdata["stream_context"]
+            # stream_context:stt.Stream = userdata["stream_context"]
             userdata["stt_triggered"] = False 
-            text = stream_context.finishStream()
-            #there is a hotword bug that puts junk single characters after hotwords
-            #this is a quick and dirty replacement
-            #TODO: actually traverse list of hotwords and remove singel characters that fall after specific hotwords
-            #logger.info("\"" + text + "\"")
-            text=re.sub('(\s[a-z]){2,}\s',' ',text) #at least two occurence of single letters surrounded by spaces
-            #trim trailing spaces
-            text = text.strip()
+            rec:KaldiRecognizer = userdata["rec"]
+            text = rec.Result()
+            # text = stream_context.finishStream()
+            # text = text.strip()
             logging.info("Recognized: %s" % text)
-            # if len(text) > 0:
-            #     if text == "go to sleep":
-            #         client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_SLEEPING")
-            #     else:
-            #         client.publish(TOPIC_QUESTIONS,qos=2, payload=text) 
             client.publish(TOPIC_STT_OUTPUT, text)  
             #client.publish(TOPIC_AUDIO_OUTPUT_DATA, userdata["input_audio"])
         return
 
-    # Load STT model
-
-    print('Initializing model...')
-    logging.info("STT_MODEL_PATH: %s", STT_MODEL_PATH)
-    model = stt.Model(STT_MODEL_PATH)
-
-    #load scorer
-    logging.info("STT_SCORER_PATH: %s", STT_SCORER_PATH)
-    model.enableExternalScorer(STT_SCORER_PATH)
-    
-    #Add hotwords
-    #TODO: move to external configuration
-    model.addHotWord("tomorrow", 15.0) #STT "tomorrow" often interprets as "to morrow"
-    model.addHotWord("weather", 15.0) #STT "weather" often interprets as "whether"
+    # Load Vosk model
+    model = Model(lang="en-us")
+    rec = KaldiRecognizer(model, SAMPLE_RATE) 
 
     client_userdata = {
-        "model":model
-        ,"stt_triggered":False
-        ,"input_audio":b''
+    #     "model":model
+         "stt_triggered":False
+         ,"input_audio":b''
+         ,"model":model
+         ,"rec":rec
     }
     mqtt_client = mqtt.Client(client_id=MQTT_CLIENT_NAME,userdata=client_userdata)
     mqtt_client.connect(MQTT_BROKER_ADDRESS)

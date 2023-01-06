@@ -3,7 +3,8 @@ import logging
 LOGGING_LEVEL = logging.DEBUG
 MQTT_BROKER_ADDRESS = "robud.local"
 SAMPLE_RATE = 16000
-AUDIO_INPUT_INDEX = 11 #Respeaker v2 4-mic array, plugged into Jetson Nano 
+# AUDIO_INPUT_INDEX = 11 #Respeaker v2 4-mic array, plugged into Jetson Nano 
+AUDIO_INPUT_INDEX = 1 #Respeaker v2 4-mic array, plugged into RaspberryPi
 CHUNK  = 1024
 BYTES_PER_FRAME = 2 #16bit
 
