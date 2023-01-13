@@ -80,14 +80,14 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
     - sudo cp /home/robud/robud/services/robud.sensors.orientation.service /etc/systemd/system
     - sudo cp /home/robud/robud/services/robud.sensors.tof.service /etc/systemd/system
     - sudo cp /home/robud/robud/services/robud.robud_state.robud_state_manager.service /etc/systemd/system
+    - sudo cp /home/robud/robud/services/robud.sensors.camera.service /etc/systemd/system
     - sudo systemctl daemon-reload
-    - sudo systemctl enable robud.*
-    - The following services need changes still to work RPi 17-Dec-2022
+    - sudo systemctl enable [each service unit file]
+    - The following services need changes still to work RPi 12-Jan-2023
       - pulseaudio.service
       - robud.ai.object_detection.service
       - robud.ai.stt.service
       - robud.ai.wakeword_detection.service
-      - robud.sensors.camera.service
       - robud.sensors.light_level.service
       - robud.sensors.odometry.service
       - robud.sensors.ultrasonics.service
