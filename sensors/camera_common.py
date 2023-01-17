@@ -1,3 +1,4 @@
 CAMERA_HEIGHT = 360
 CAMERA_WIDTH = 640
 TOPIC_CAMERA_RAW = "robud/sensors/camera/raw"
+CAMERA_FPS = 15

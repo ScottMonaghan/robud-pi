@@ -12,7 +12,8 @@ from datetime import datetime
 import os
 import sys
 import traceback
-from robud.sensors.camera_common import CAMERA_HEIGHT, CAMERA_WIDTH, TOPIC_CAMERA_RAW
+from robud.sensors.camera_common import CAMERA_HEIGHT, CAMERA_WIDTH, TOPIC_CAMERA_RAW, CAMERA_FPS
+from time import monotonic, sleep
 
 random.seed()
 
@@ -24,7 +25,7 @@ MQTT_CLIENT_NAME = "camera.py" + str(random.randint(0,999999999))
 TOPIC_ROBUD_LOGGING_LOG = "robud/robud_logging/log"
 TOPIC_ROBUD_LOGGING_LOG_SIGNED = TOPIC_ROBUD_LOGGING_LOG + "/" + MQTT_CLIENT_NAME
 TOPIC_ROBUD_LOGGING_LOG_ALL = TOPIC_ROBUD_LOGGING_LOG + "/#"
-LOGGING_LEVEL = logging.DEBUG
+LOGGING_LEVEL = logging.ERROR
 
 #parse arguments
 parser = argparse.ArgumentParser()
@@ -50,22 +51,19 @@ try:
     client.loop_start()
 #     # Create the Camera instance for 640 by 360
     camera = Picamera2()
-    config = camera.create_still_configuration({"size":(640,360)})
+    config = camera.create_still_configuration({"size":(CAMERA_WIDTH,CAMERA_HEIGHT)})
     camera.configure(config)
     camera.start()
+    loop_min = 1/CAMERA_FPS
     while True:
+        loop_start = monotonic()
         frame = camera.capture_array()
         encoded_frame = cv2.imencode('.jpg',frame, [int(cv2.IMWRITE_JPEG_QUALITY), 75])
         payload=encoded_frame[1].tobytes()
         client.publish(topic=topic_camera_raw,payload=payload,qos=0)
-#     camera = nano.Camera(flip=2, width=CAMERA_WIDTH, height=CAMERA_HEIGHT, fps=15)
-#     while camera.isReady():
-#         #try:
-#             # read the camera image
-#             frame = camera.read()
-#             encoded_frame = cv2.imencode('.jpg',frame, [int(cv2.IMWRITE_JPEG_QUALITY), 75])
-#             payload=encoded_frame[1].tobytes()
-#             client.publish(topic=topic_camera_raw,payload=payload,qos=0)
+        loop_time = monotonic() - loop_start
+        if loop_time < loop_min:
+            sleep(loop_min - loop_time)
 
 except Exception as e:
     logger.critical(str(e) + "\n" + traceback.format_exc())
