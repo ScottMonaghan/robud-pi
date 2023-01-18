@@ -39,6 +39,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] Install pyaudio (installed as MyCroft Precise preq)
  - [x] Install pytweening - pip install pytweening
  - [x] Install bno055 -  pip3 install adafruit-circuitpython-bno055
+ - [x] Update /boot/config.txt with following for bno0##: dtparam=i2c_arm_baudrate=400000
  - [x] Install adafruit-circuitpython-vl53l0x (time-of-flight) - pip3 install adafruit-circuitpython-vl53l0x
  - [x] Install HC S404 Ultrasonic driver - pip3 install adafruit-circuitpython-hcsr04
  - [x] Install VNC Server - sudo apt-get install realvnc-vnc-server
