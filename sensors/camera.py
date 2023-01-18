@@ -57,7 +57,7 @@ try:
     loop_min = 1/CAMERA_FPS
     while True:
         loop_start = monotonic()
-        frame = camera.capture_array()
+        frame = cv2.cvtColor(camera.capture_array(),cv2.COLOR_BGR2RGB)
         encoded_frame = cv2.imencode('.jpg',frame, [int(cv2.IMWRITE_JPEG_QUALITY), 75])
         payload=encoded_frame[1].tobytes()
         client.publish(topic=topic_camera_raw,payload=payload,qos=0)
