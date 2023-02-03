@@ -11,17 +11,21 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
    - [x] PYTHONPATH to robud source 
      - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
      - log out and log back in
+ - [] Update pip3 install update pip
  - [x] Install VSCODE - sudo apt install code
  - [X] Install Mosquitto - sudo apt install mosquitto mosquitto-clients
  - [x] Configure mosquitto
    - sudo nano /etc/mosquitto/mosquitto.conf
    - Add these lines and save
-     - allow_anonomous true
+     - allow_anonymous true
      - listener 1883 0.0.0.0
    - sudo systemctl restart moquitto.service
  - [X] Install paho.mqtt pip install paho-mqtt
  - [X] Install OpenCV - sudo apt install python3-opencv -y
  - [X] Install TensorFlow 2.10 - https://github.com/PINTO0309/Tensorflow-bin
+     - git clone https://github.com/PINTO0309/Tensorflow-bin
+     - cd Tensorflow-bin
+     - ./download_tensorflow-2.10.0-cp310-none-linux_aarch64.sh
  - [X] Install eSpeak-ng - sudo apt-get install espeak-ng
  - [X] Install Librosa - pip install librosa
  - [x] Install Vosk
@@ -38,6 +42,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [x] Install Blinka - pip3 install Adafruit-Blinka
  - [x] Install adafruit_motorkit - pip3 install adafruit-circuitpython-motorkit
  - [x] Install adafruit_servokit - pip3 install adafruit-circuitpython-servokit
+ - [ ] Install portaudio19-dev library  sudo apt install portaudio19-dev
  - [x] Install pyaudio - pip3 install pyaudio
  - [x] Install pytweening - pip install pytweening
  - [x] Install bno055 -  pip3 install adafruit-circuitpython-bno055
