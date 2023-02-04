@@ -23,9 +23,8 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [X] Install paho.mqtt pip install paho-mqtt
  - [X] Install OpenCV - sudo apt install python3-opencv -y
  - [X] Install TensorFlow 2.10 - https://github.com/PINTO0309/Tensorflow-bin
-     - git clone https://github.com/PINTO0309/Tensorflow-bin
-     - cd Tensorflow-bin
-     - ./download_tensorflow-2.10.0-cp310-none-linux_aarch64.sh
+     - Follow Example of Python 3.x + Tensorflow v2 series
+     - use CPVER=39 (CircuitPython 3.9)
  - [X] Install eSpeak-ng - sudo apt-get install espeak-ng
  - [X] Install Librosa - pip install librosa
  - [x] Install Vosk
