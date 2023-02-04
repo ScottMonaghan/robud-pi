@@ -24,7 +24,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [X] Install OpenCV - sudo apt install python3-opencv -y
  - [X] Install TensorFlow 2.10 - https://github.com/PINTO0309/Tensorflow-bin
      - Follow Example of Python 3.x + Tensorflow v2 series
-     - use CPVER=39 (CircuitPython 3.9)
+     - use PYVER=39 (Python 3.9)
  - [X] Install eSpeak-ng - sudo apt-get install espeak-ng
  - [X] Install Librosa - pip install librosa
  - [x] Install Vosk
