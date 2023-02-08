@@ -86,22 +86,27 @@ try:
             raise ValueError('Invalid Throttle Value: {}'.format(message.payload))
             
     def on_message_servo_angle(client, userdata, message):
-        print(message.topic, message.payload)
+        #print(message.topic, message.payload)
         head_servo = userdata["head_servo"]
-        try:
-            #convert message payload to int
-            angle = int(message.payload)
-            if angle < HEAD_SERVO_MIN_ANGLE or angle > HEAD_SERVO_MAX_ANGLE:
-                raise ValueError
-            head_servo.angle = angle
-        except ValueError:
-            raise ValueError('Invalid Servo Angle: {}'.format(message.payload))
+        if head_servo:
+            try:
+                #convert message payload to int
+                angle = int(message.payload)
+                if angle < HEAD_SERVO_MIN_ANGLE or angle > HEAD_SERVO_MAX_ANGLE:
+                    raise ValueError
+                head_servo.angle = angle
+            except ValueError:
+                raise ValueError('Invalid Servo Angle: {}'.format(message.payload))
 
-
-
-    kit = MotorKit() #need frequency of 50hz for servo
-    servokit = ServoKit(channels=16, address = 0x41)
-    head_servo = servokit.servo[15]
+    kit = None
+    servokit = None
+    head_servo = None
+    try:
+        kit = MotorKit() #need frequency of 50hz for servo
+        servokit = ServoKit(channels=16, address = 0x41)
+        head_servo = servokit.servo[15]
+    except:
+        pass
     #kit = None
     motor_right = RobudMotorWapper(kit.motor1, "motor_right")
     motor_left = RobudMotorWapper(kit.motor2, "motor_left")
