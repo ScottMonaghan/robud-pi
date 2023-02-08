@@ -5,60 +5,56 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
  - [X] Install 64bit RaspberryPi OS (for tensorflow)
    - hostname: robud.local
    - username: robud
-   - password: your choice 
+   - password: your choice
+ - [x] Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
+   - [x] Rename folder - mv robud-pi robud
+   - [x] PYTHONPATH to robud source 
+     - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
+     - log out and log back in
+ - [] Update pip3 install update pip
+ - [x] Install VSCODE - sudo apt install code
  - [X] Install Mosquitto - sudo apt install mosquitto mosquitto-clients
+ - [x] Configure mosquitto
+   - sudo nano /etc/mosquitto/mosquitto.conf
+   - Add these lines and save
+     - allow_anonymous true
+     - listener 1883 0.0.0.0
+   - sudo systemctl restart moquitto.service
  - [X] Install paho.mqtt pip install paho-mqtt
  - [X] Install OpenCV - sudo apt install python3-opencv -y
  - [X] Install TensorFlow 2.10 - https://github.com/PINTO0309/Tensorflow-bin
+     - Follow Example of Python 3.x + Tensorflow v2 series
+     - use PYVER=39 (Python 3.9)
  - [X] Install eSpeak-ng - sudo apt-get install espeak-ng
  - [X] Install Librosa - pip install librosa
- - [x] ~~Install MyCroft Precise~~
-   - ~~sudo apt install portaudio19-dev python3-pyaudio~~
-   - ~~wget https://github.com/MycroftAI/mycroft-precise/releases/download/v0.3.0/precise-engine_0.3.0_aarch64.tar.gz~~
-   - ~~tar xvf precise-engine_0.3.0_aarch64.tar.gz~~
-   - ~~sudo pip3 install precise-runner~~
-   - ~~wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb -P /home/robud/robud/ai/wakeword_detection/models/~~
-   - ~~wget https://github.com/MycroftAI/precise-data/blob/models/hey-mycroft.pb.params -P /home/robud/robud/ai/wakeword_detection/models/~~
- - [x] ~~Install Coqui STT~~
-   - ~~wget https://github.com/coqui-ai/STT/releases/download/v1.4.0/stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
-   - ~~pip install stt-1.4.0-cp39-cp39-linux_aarch64.whl~~
  - [x] Install Vosk
    - [x] pip3 install vosk
-   - [x] navigate to ~/robud/ai/stt/models (create folder if not created)
-   - [x] Download Small English Model
+   - [x] navigate to ~/robud/robud/ai/stt/models (create folder if not created)
+   - [x] If not already in repo, download Small English Model
      - wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
      - unzip vosk-model-small-en-us-0.15.zip
      - rm vosk-model-small-en-us-0.15.zip
-   - [x] Download Speaker Identification Model
+   - [x] If not already in repo, download Speaker Identification Model
      - wget https://alphacephei.com/vosk/models/vosk-model-spk-0.4.zip
      - unzip vosk-model-spk-0.4.zip
      - rm vosk-model-spk-0.4.zip
  - [x] Install Blinka - pip3 install Adafruit-Blinka
  - [x] Install adafruit_motorkit - pip3 install adafruit-circuitpython-motorkit
  - [x] Install adafruit_servokit - pip3 install adafruit-circuitpython-servokit
- - [x] Install pyaudio (installed as MyCroft Precise preq)
+ - [ ] Install portaudio19-dev library  sudo apt install portaudio19-dev
+ - [x] Install pyaudio - pip3 install pyaudio
  - [x] Install pytweening - pip install pytweening
  - [x] Install bno055 -  pip3 install adafruit-circuitpython-bno055
+ - [x] Update /boot/config.txt with following for bno0##: dtparam=i2c_arm_baudrate=400000
+   - bno055 will crash i2c without this (https://learn.adafruit.com/raspberry-pi-i2c-clock-stretching-fixes)
  - [x] Install adafruit-circuitpython-vl53l0x (time-of-flight) - pip3 install adafruit-circuitpython-vl53l0x
- - [x] Install HC S404 Ultrasonic driver - pip3 install adafruit-circuitpython-hcsr04
+ - ~[x] Install HC S404 Ultrasonic driver - pip3 install adafruit-circuitpython-hcsr04~ (ultrasonic sensors not integrated yet)
  - [x] Install VNC Server - sudo apt-get install realvnc-vnc-server
  - [x] Configure VNC Server 
    - sudo raspi-config
    - enable VNC
    - set VNC resolution
- - [x] Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
- - [x] Rename folder - mv robud-pi robud
- - [x] PYTHONPATH to robud source 
-   - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
-   - log out and log back in
- - [x] Install VSCODE - sudo apt install code
- - [x] Configure mosquitto
-   - sudo nano /etc/mosquitto/mosquitto.conf
-   - Add these lines and save
-     - allow_anonomous true
-     - listener 1883 0.0.0.0
-   - sudo systemctl restart moquitto.service
- - [x] Blink Test 
+ - [x] Blink Test 1 - hook up to a monitor and see you get robud blinking if you run robud_face.py
    - python3 /home/robud/robud/robud_face/robud_face.py
    - ctrl-F to exit fullscreen
  - [x] Install Adafruit Platform Detect - pip3 install Adafruit-PlatformDetect
@@ -91,7 +87,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
       - robud.sensors.light_level.service
       - robud.sensors.odometry.service
       - robud.sensors.ultrasonics.service
-    - [ ] set up graphical autostart
+    - [x] set up graphical autostart
       - mkdir /home/robud/.config/autostart
       - ~~cp /home/robud/robud/robud_startup.sh /home/robud/.config/autostart~~
       - sudo nano /home/robud/.config/autostart/robud.desktop
@@ -103,6 +99,12 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
         Terminal=false
         Type=Application
         ```
+    - [x] Blink Test 2 (start up test)
+      - Hook up pi to monitor, keyboard & mouse, and restart. After a few min, RoBud's eyes should be looking around. CTRL-F to exit full scren.
+    - [x] Blink Test 3 (VNC test)
+      - Disconnect all HDMI cables from pi
+      - Restart Pi and VNC to robud.local (or direct pi IP) RoBud's eyes should be looking around. 
+      - Resolution should be your configured CTRL-F to exit full scren.
       
       
 
