@@ -104,9 +104,13 @@ try:
     try:
         kit = MotorKit() #need frequency of 50hz for servo
         servokit = ServoKit(channels=16, address = 0x41)
+    except Exception as e:
+        logger.warning(str(e) + "\n" + traceback.format_exc())
+
+    try:
         head_servo = servokit.servo[15]
-    except:
-        pass
+    except Exception as e:
+        logger.warning(str(e) + "\n" + traceback.format_exc())
     #kit = None
     motor_right = RobudMotorWapper(kit.motor1, "motor_right")
     motor_left = RobudMotorWapper(kit.motor2, "motor_left")
