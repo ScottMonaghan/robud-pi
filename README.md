@@ -107,7 +107,41 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
       - Resolution should be your configured CTRL-F to exit full scren.
       
       
-
+# Remote Server Setup Steps
+- Setup VirtualBox Clean Ubuntu Install
+  - Download and install virtualbox for your appropriate host system: https://www.virtualbox.org/wiki/Downloads
+  - Download Ubunto 20.04 desktop iso: https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso
+  - Create a new vm with the following settings:
+    - Name: ROBUD-REMOTE
+    - Folder: Your choice
+    - ISO: iso downloaded above
+    - Username: Robud
+    - Password: your choice
+    - Guest Additions: checked
+    - Base Memory: 4096 
+    - Processors: 4 (if you can spare)
+    - Disk Size: 40gb (if you can spare)
+  - Complete Ubuntu Installation
+  - Enable bidirectional clipboard under Devices/Shared Clipboard (makes this much easier)
+  - Upgrade python3 to 3.9:
+    - sudo apt update
+      - if robud users doesn't have sudo priveledges (weird): https://www.tecmint.com/fix-user-is-not-in-the-sudoers-file-the-incident-will-be-reported-ubuntu/
+    - sudo apt install python3.9
+   - Install Git - sudo apt install git
+   - Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
+   - Rename folder - mv robud-pi robud
+   - PYTHONPATH to robud source 
+     - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
+     - log out and log back in
+   - install pip - sudo apt install python3-pip
+   - install VS code - sudo snap install --classic code
+   - Minium for running utils/KeyboardController
+     - python3.9 -m pip install numpy
+     - ython3.9 -m pip install paho-mqtt
+     - python3.9 -m pip install pygame
+  
+  
+    
 
 
 
