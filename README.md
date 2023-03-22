@@ -1,5 +1,53 @@
-# robud-pi
-Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
+# RoBud - Lovable, Accessible, Autonomous Companion
+<img src="./data/images/Ro-Bud-concept-render.jpeg" alt="Ro-bud" width=600 />  
+
+## Table of Contents
+ * [Summary](#summary)
+ * [Description](#description)
+ * [Original Project Announcement Videos](#original-project-announcement-videos)
+   * [Part 1](#part-1)
+   * [Part 2](#part-2)
+   * [Part 3](#part-3)
+   * [Part 4](#part-4)
+## Summary
+The RoBud project seeks to create a companion bot that is lovable, accessible to all, and autonomous.  
+
+[Return to Table of Contents](#table-of-contents)
+
+## Description
+Challenge: Despite decades of fictional depiction through popular culture, as of 2021, robotic companion bots that even come close to those of popular imagination are not available at scale.
+
+While there have been impressive private for-profit attempts at releasing relatively advanced consumer companion bots, specifically Jibo and Anki Vector, these endeavors ultimately proved commercially unviable, forcing the companies to fold, and effectively removing these wonderfully engineered robots from either availability or full operability (as they were dependent on proprietary services provided by their now-defunct companies).
+
+The RoBud project is an attempt to pick up where Jibo and Ankni left off, and fulfil the dream of providing a consumer robot that is:
+1. LOVEABLE - Feels just like a family pet
+2. ACCESSIBLE - Can be built by anyone following project instructions with readily available parts with a cost at or under $500
+3. AUTONOMOUS - Has it's own goals.  
+
+[Return to Table of Contents](#table-of-contents)
+
+---
+## Original Project Announcement Videos  
+These videos are the original annoucement and project plan for Ro-Bud uploaded to TikTok on 17-April 2021.  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 1  
+[![Ro-Bud Project - Part 1](https://img.youtube.com/vi/bj4LzYycwYc/0.jpg)](https://www.youtube.com/watch?v=bj4LzYycwYc)  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 2
+[![Ro-Bud Project - Part 2](https://img.youtube.com/vi/H4fC_qm8pPo/0.jpg)](https://www.youtube.com/watch?v=H4fC_qm8pPo)  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 3
+[![Ro-Bud Project - Part 3](https://img.youtube.com/vi/r7C16MHGqBg/0.jpg)](https://www.youtube.com/watch?v=r7C16MHGqBg)  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 4
+[![Ro-Bud Project - Part 4](https://img.youtube.com/vi/n2G9MuK9-XE/0.jpg)](https://www.youtube.com/watch?v=n2G9MuK9-XE)  
+
+[Return to Table of Contents](#table-of-contents)
+
 
 # Set-up Steps (draft outline)
  - [X] Install 64bit RaspberryPi OS (for tensorflow)
