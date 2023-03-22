@@ -4,6 +4,8 @@
 ## Table of Contents
  * [Summary](#summary)
  * [Description](#description)
+ * [Pi Set-up Steps (draft outline)](#set-up-steps-draft-outline)
+ * [Remote Server Setup Steps](#remote-server-setup-steps)
  * [Original Project Announcement Videos](#original-project-announcement-videos)
    * [Part 1](#part-1)
    * [Part 2](#part-2)
@@ -26,30 +28,7 @@ The RoBud project is an attempt to pick up where Jibo and Ankni left off, and fu
 
 [Return to Table of Contents](#table-of-contents)
 
----
-## Original Project Announcement Videos  
-These videos are the original annoucement and project plan for Ro-Bud uploaded to TikTok on 17-April 2021.  
-
-[Return to Table of Contents](#table-of-contents)
-### Part 1  
-[![Ro-Bud Project - Part 1](https://img.youtube.com/vi/bj4LzYycwYc/0.jpg)](https://www.youtube.com/watch?v=bj4LzYycwYc)  
-
-[Return to Table of Contents](#table-of-contents)
-### Part 2
-[![Ro-Bud Project - Part 2](https://img.youtube.com/vi/H4fC_qm8pPo/0.jpg)](https://www.youtube.com/watch?v=H4fC_qm8pPo)  
-
-[Return to Table of Contents](#table-of-contents)
-### Part 3
-[![Ro-Bud Project - Part 3](https://img.youtube.com/vi/r7C16MHGqBg/0.jpg)](https://www.youtube.com/watch?v=r7C16MHGqBg)  
-
-[Return to Table of Contents](#table-of-contents)
-### Part 4
-[![Ro-Bud Project - Part 4](https://img.youtube.com/vi/n2G9MuK9-XE/0.jpg)](https://www.youtube.com/watch?v=n2G9MuK9-XE)  
-
-[Return to Table of Contents](#table-of-contents)
-
-
-# Set-up Steps (draft outline)
+## Set-up Steps (draft outline)
  - [X] Install 64bit RaspberryPi OS (for tensorflow)
    - hostname: robud.local
    - username: robud
@@ -153,7 +132,8 @@ These videos are the original annoucement and project plan for Ro-Bud uploaded t
       - Disconnect all HDMI cables from pi
       - Restart Pi and VNC to robud.local (or direct pi IP) RoBud's eyes should be looking around. 
       - Resolution should be your configured CTRL-F to exit full scren.
-      
+
+[Return to Table of Contents](#table-of-contents)      
       
 ## Remote Server Setup Steps
 - Setup VirtualBox Clean Ubuntu Install
@@ -195,6 +175,30 @@ These videos are the original annoucement and project plan for Ro-Bud uploaded t
     - python3.9 keyboard_controller.py
     - use arrow keys to control locomotion
     - use WASD to move head up & down and turn (same as left/right arrows)
+    
+[Return to Table of Contents](#table-of-contents)      
+
+---
+## Original Project Announcement Videos  
+These videos are the original annoucement and project plan for Ro-Bud uploaded to TikTok on 17-April 2021.  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 1  
+[![Ro-Bud Project - Part 1](https://img.youtube.com/vi/bj4LzYycwYc/0.jpg)](https://www.youtube.com/watch?v=bj4LzYycwYc)  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 2
+[![Ro-Bud Project - Part 2](https://img.youtube.com/vi/H4fC_qm8pPo/0.jpg)](https://www.youtube.com/watch?v=H4fC_qm8pPo)  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 3
+[![Ro-Bud Project - Part 3](https://img.youtube.com/vi/r7C16MHGqBg/0.jpg)](https://www.youtube.com/watch?v=r7C16MHGqBg)  
+
+[Return to Table of Contents](#table-of-contents)
+### Part 4
+[![Ro-Bud Project - Part 4](https://img.youtube.com/vi/n2G9MuK9-XE/0.jpg)](https://www.youtube.com/watch?v=n2G9MuK9-XE)  
+
+[Return to Table of Contents](#table-of-contents)
   
   
     
