@@ -107,7 +107,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
       - Resolution should be your configured CTRL-F to exit full scren.
       
       
-# Remote Server Setup Steps
+## Remote Server Setup Steps
 - Setup VirtualBox Clean Ubuntu Install
   - Download and install virtualbox for your appropriate host system: https://www.virtualbox.org/wiki/Downloads
   - Download Ubunto 20.04 desktop iso: https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso
@@ -127,19 +127,26 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
     - sudo apt update
       - if robud users doesn't have sudo priveledges (weird): https://www.tecmint.com/fix-user-is-not-in-the-sudoers-file-the-incident-will-be-reported-ubuntu/
     - sudo apt install python3.9
-   - Install Git - sudo apt install git
-   - Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
-   - Rename folder - mv robud-pi robud
-   - PYTHONPATH to robud source 
-     - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
-     - log out and log back in
-   - install pip - sudo apt install python3-pip
-   - install VS code - sudo snap install --classic code
-   - Minium for running utils/KeyboardController
-     - python3.9 -m pip install numpy
-     - ython3.9 -m pip install paho-mqtt
-     - python3.9 -m pip install pygame
-     - python3.9 -m pip install pytweening
+  - Install Git - sudo apt install git
+  - Clone repo - git clone https://github.com/ScottMonaghan/robud-pi.git
+  - Rename folder - mv robud-pi robud
+  - PYTHONPATH to robud source 
+    - Add line to /home/robud/.bashrc - export PYTHONPATH="${PYTHONPATH}:/home/robud"
+    - log out and log back in
+  - install pip - sudo apt install python3-pip
+  - install VS code - sudo snap install --classic code
+  - Minium for running utils/KeyboardController
+    - python3.9 -m pip install numpy
+    - python3.9 -m pip install paho-mqtt
+    - python3.9 -m pip install pygame
+    - python3.9 -m pip install pytweening
+  - Try out keyboard controller:
+    - Start up robud
+    - Ensure robud.local returns a ping
+    - cd ~/robud/utils
+    - python3.9 keyboard_controller.py
+    - use arrow keys to control locomotion
+    - use WASD to move head up & down and turn (same as left/right arrows)
   
   
     
