@@ -139,6 +139,7 @@ Ro-Bud - Lovable, Accessible, Autonomous Companion (on the Raspberry Pi!)
      - python3.9 -m pip install numpy
      - ython3.9 -m pip install paho-mqtt
      - python3.9 -m pip install pygame
+     - python3.9 -m pip install pytweening
   
   
     
