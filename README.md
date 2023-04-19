@@ -175,6 +175,8 @@ The RoBud project is an attempt to pick up where Jibo and Ankni left off, and fu
     - python3.9 keyboard_controller.py
     - use arrow keys to control locomotion
     - use WASD to move head up & down and turn (same as left/right arrows)
+  - Additional Minimum for camera-montior
+    - python3.9 -m pip install opencv-python
     
 [Return to Table of Contents](#table-of-contents)      
 
