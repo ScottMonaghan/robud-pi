@@ -1,17 +1,15 @@
-from robud.ai.stt.stt_config import (
-    MQTT_BROKER_ADDRESS 
-    ,AUDIO_INPUT_INDEX 
-    ,STT_MODEL_PATH
-    ,STT_SCORER_PATH
-    ,VAD_AGGRESSIVENESS
-    ,SAMPLE_RATE
+#Need to add timeout so audio doesn't keep processing if it keeps detecting voice. ~ 5 sec seems appropriate.
 
+from robud.ai.stt.stt_config import (
+    MQTT_BROKER_ADDRESS
+    ,STT_UTTERANCE_TIMEOUT
+    ,SAMPLE_RATE
 )
 from robud.ai.stt.stt_common import(
     TOPIC_STT_OUTPUT,
     TOPIC_STT_REQUEST
 )
-#from robud.ai.stt.vadaudio import Audio, VADAudio
+
 import random
 import logging
 import argparse
@@ -21,26 +19,14 @@ import os
 import traceback
 import sys
 import paho.mqtt.client as mqtt
-import time
-import stt
+from time import monotonic
 from vosk import Model, KaldiRecognizer
-import numpy as np
-#import pyaudio
-import wave
-import webrtcvad
-#from halo import Halo
-from scipy import signal
-import threading, collections, queue, os.path
-from robud.robud_voice.robud_voice_common import TOPIC_ROBUD_VOICE_TEXT_INPUT
-from robud.robud_questions.robud_questions_common import TOPIC_QUESTIONS
-import re #regular expressions
+import os.path
 from robud.robud_audio.robud_audio_common import (
-    TOPIC_AUDIO_INPUT_DATA,
-    TOPIC_SPEECH_INPUT_DATA
+    TOPIC_AUDIO_INPUT_DATA
     ,TOPIC_SPEECH_INPUT_COMPLETE
-    ,TOPIC_AUDIO_OUTPUT_DATA
 )
-from robud.robud_state.robud_state_common import TOPIC_ROBUD_STATE
+import json
 
 random.seed()
 
@@ -69,65 +55,52 @@ logger.addHandler(myHandler)
 logger.level = LOGGING_LEVEL
 
 try:
-    # ToDo:
-    #   [ ] Change to use VOSK
-    #   [ ] Update trigger to any speech detection
-
     input_audio = b''
 
     def on_message_stt_request(client:mqtt.Client, userdata,message):
         # ToDo
-        #   [ ] Modify from STT to VOSK
+        #   [x] Modify from STT to VOSK
         logger.info("stt request received")
-        userdata["stt_triggered"] = True
+        #reset recognizer for new input
+        rec:KaldiRecognizer = userdata["rec"]
+        rec.Reset()
+        userdata["recording_start"] = monotonic()
+        #userdata["stt_triggered"] = True
         # model:stt.Model = userdata["model"]
         # userdata["stream_context"] = model.createStream()
-        model = userdata["model"]
-        userdata["rec"] = KaldiRecognizer(model, SAMPLE_RATE) 
-        userdata["input_audio"] = b''
+        #model = userdata["model"]
+        #userdata["rec"] = KaldiRecognizer(model, SAMPLE_RATE) 
+        #userdata["input_audio"] = b''
+        
         return
     
     def on_message_speech_input_data(client:mqtt.Client, userdata, message:mqtt.MQTTMessage):
-        # ToDo
-        #   [ ] Modify from STT to VOSK
-        if userdata["stt_triggered"] and userdata["rec"]:
-            #logger.debug("Speech input received")
-            # stream_context:stt.Stream = userdata["stream_context"]
-            # stream_context.feedAudioContent(np.frombuffer(message.payload, np.int16))
-            userdata["input_audio"] = userdata["input_audio"] + message.payload
-            rec = userdata["rec"]
-            if rec.AcceptWaveform(message.payload):
-                print (rec.Result())
-            else:
-               print(rec.PartialResult())
-        return
+        rec:KaldiRecognizer = userdata["rec"]
+        #clear rec if more than timeout
+        if monotonic() - userdata["recording_start"] > STT_UTTERANCE_TIMEOUT:
+            rec.Reset()
+            userdata["recording_start"] = monotonic()
+        rec.AcceptWaveform(message.payload)
 
     def on_message_speech_input_complete(client:mqtt.Client, userdata, message:mqtt.MQTTMessage):
-        # ToDo
-        #   [ ] Modify from STT to VOSK
-        if userdata["stt_triggered"] and userdata["rec"]:
+        if userdata["rec"]:
             logger.info("Speech input Complete. Processing...")
-            # stream_context:stt.Stream = userdata["stream_context"]
-            userdata["stt_triggered"] = False 
             rec:KaldiRecognizer = userdata["rec"]
-            text = rec.Result()
-            # text = stream_context.finishStream()
-            # text = text.strip()
+            result = json.loads(rec.Result())
+            print(result)
+            text = result["text"]
             logging.info("Recognized: %s" % text)
             client.publish(TOPIC_STT_OUTPUT, text)  
-            #client.publish(TOPIC_AUDIO_OUTPUT_DATA, userdata["input_audio"])
         return
 
     # Load Vosk model
     model = Model(lang="en-us")
     rec = KaldiRecognizer(model, SAMPLE_RATE) 
+    recording_start = monotonic()
 
     client_userdata = {
-    #     "model":model
-         "stt_triggered":False
-         ,"input_audio":b''
-         ,"model":model
-         ,"rec":rec
+        "rec":rec
+        ,"recording_start":recording_start
     }
     mqtt_client = mqtt.Client(client_id=MQTT_CLIENT_NAME,userdata=client_userdata)
     mqtt_client.connect(MQTT_BROKER_ADDRESS)

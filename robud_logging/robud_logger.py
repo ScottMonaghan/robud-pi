@@ -69,7 +69,12 @@ try:
         os.makedirs(directory)
     log_file = open(file_path, "a")
     myHandler = MQTTHandler(hostname=MQTT_BROKER_ADDRESS, topic=TOPIC_ROBUD_LOGGING_LOG_SIGNED, qos=2, log_file=log_file)
-    myHandler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s: %(filename)s: %(message)s'))
+    #made format unicode below to handle this error 20-May-2023
+    # File "/home/robud/robud/robud_logging/MQTTHandler.py", line 43, in emit
+    # self.log_file.write(msg + "\n")
+    # UnicodeEncodeError: 'latin-1' codec can't encode character '\u2014' in position 81: ordinal not in range(256)
+
+    myHandler.setFormatter(logging.Formatter(u'%(asctime)s - %(levelname)s: %(filename)s: %(message)s'))
     logger.addHandler(myHandler)
     logger.level = LOGGING_LEVEL
     

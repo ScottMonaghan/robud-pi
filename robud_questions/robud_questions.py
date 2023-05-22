@@ -42,7 +42,7 @@ file_path = args.Output + datetime.now().strftime("%Y-%m-%d") + ".txt"
 directory = os.path.dirname(file_path)
 if not os.path.exists(directory):
     os.makedirs(directory)
-log_file = open(file_path, "a")
+log_file = open(file_path, "a",encoding='UTF-8')
 myHandler = MQTTHandler(hostname=MQTT_BROKER_ADDRESS, topic=TOPIC_ROBUD_LOGGING_LOG_SIGNED, qos=2, log_file=log_file)
 myHandler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s: %(filename)s: %(message)s'))
 logger.addHandler(myHandler)
@@ -75,7 +75,8 @@ try:
             #      + " " + f.read().decode('utf-8').replace('Wolfram Alpha','Ro-Bud').replace('Stephen Wolfram', 'Scott Monaghan')
             #     )
             with urlopen(url) as f:
-                answer = f.read().decode('utf-8').replace('Wolfram Alpha','Ro-Bud').replace('Stephen Wolfram', 'Scott Monaghan')
+                #changed to latin-1 because the logger was having problems with utf-8
+                answer = f.read().decode('latin-1').replace('Wolfram Alpha','Ro-Bud').replace('Stephen Wolfram', 'Scott Monaghan')
                 
             logger.info("Answer recieved: " + answer)
             logger.info("Sending TOPIC_VOICE_TEXT_INPUT")
