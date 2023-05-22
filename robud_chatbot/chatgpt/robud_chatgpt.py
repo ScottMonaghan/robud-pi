@@ -8,7 +8,7 @@ import traceback
 import openai
 openai.api_key = OPENAI_KEY
 from time import sleep
-from socket import timeout
+from datetime import datetime
 
 class chat_message(dict):
     ROLE_SYSTEM = "system"
@@ -70,7 +70,8 @@ retry_message = chat_message(
      role=chat_message.ROLE_ASSISTANT
      ,content="One moment, I'm having trouble reaching chatgpt. Let me try agian."
 )
-     
+
+chat_history_filpath = "chat_history/chat_messages.txt" + datetime.now().strftime("%Y-%m-%d") + ".txt"    
 user_prompt=""
 
 messages.append(opening_message)
@@ -82,7 +83,7 @@ while True:
         if user_prompt != "":
             messages.append(chat_message(role=chat_message.ROLE_USER, content=user_prompt))
             response_message = get_chat_response()
-        f = open("chat_messages.txt", "w")
+        f = open("chat_history/chat_messages.txt", "w")
         f.write(str(messages))
         f.close()
     except openai.error.Timeout:
