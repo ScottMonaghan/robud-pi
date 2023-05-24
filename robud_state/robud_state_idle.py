@@ -38,7 +38,7 @@ def robud_state_idle(mqtt_client:mqtt.Client, client_userdata:Dict):
     MAX_VEERAGE = 10
     MQTT_BROKER_ADDRESS = "robud.local"
     MQTT_CLIENT_NAME = "robud_state_idle.py" + str(random.randint(0,999999999))
-    HEAD_SERVO_SPEED = 150 #degrees/sec
+    HEAD_SERVO_SPEED = 90 #degrees/sec
     PERSON_DETECTION_TIMEOUT = 5 #seconds
     PERSON_DETECTION_RANGE = 80 #centimeters or less
     PERSON_DETECTION_HEIGHT = 0.67 # % of CAMERA_HEIGHT

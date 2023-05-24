@@ -16,6 +16,7 @@ import librosa.effects
 from scipy import signal
 from time import monotonic, sleep
 from collections import deque
+import re
 
 
 random.seed()
@@ -84,7 +85,8 @@ try:
         logger.debug(tts)
 
         #split tts out by sentences
-        sentences = tts.split(". ")
+        sentences = re.split('[\.,;]\s*',tts)#tts.split(". ")
+        logger.debug(str(sentences))
         sentence_queue.extend(sentences)
         # for sentence in sentences:
         #     result = subprocess.run(args=['espeak-ng', '-m', '-v', 'en-us-1', '-s', '155', '-p', '100', sentence, '--stdout'], stdout=subprocess.PIPE) #, shell=True)

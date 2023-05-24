@@ -49,7 +49,7 @@ def run_head_animation(
         end_value=new_angle,
         duration=duration,
         start_time=animation_start_time,
-        animation_function=pytweening.easeInOutQuad,
+        animation_function=pytweening.easeInOutSine,
         pytweening_s = PYTWEENING_S
     )
 

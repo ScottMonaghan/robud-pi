@@ -24,6 +24,7 @@ from robud.robud_audio.robud_audio_common import (
     , TOPIC_AUDIO_INPUT_DIRECTION,
     TOPIC_SPEECH_INPUT_COMPLETE
     , TOPIC_SPEECH_INPUT_DATA
+    , TOPIC_AUDIO_OUTPUT_STOPPED
 )
 from robud.robud_audio.robud_audio_config import (
     LOGGING_LEVEL
@@ -140,7 +141,7 @@ try:
         ,frames_per_buffer=CHUNK
         ,input_device_index=AUDIO_INPUT_INDEX
         ,output=True 
-        ,start=True
+        ,start=False
     )
 
     #initialize mqtt
@@ -150,7 +151,10 @@ try:
         userdata["command"]=command
 
     def on_message_audio_output_data(client:mqtt.Client, userdata, message):
-        stream_out.write(message.payload)    
+        stream_out.start_stream()
+        stream_out.write(message.payload)
+        stream_out.stop_stream()
+        userdata["track_playback"] = True
         return
 
     client_userdata = {"command":""}
@@ -171,7 +175,13 @@ try:
 
     #When I tried to put the below in the mqtt callback, it would never fully stop the stream and would never compelte the callback
     speech_start_time=0.0
+    
+    client_userdata["track_playback"] = False
     while True:
+        if client_userdata["track_playback"] and stream_out.is_stopped():
+            mqtt_client.publish(topic=TOPIC_AUDIO_OUTPUT_STOPPED, payload = True)
+            client_userdata["track_playback"] = False
+        
         if len(client_userdata["command"]) > 0:
             command = client_userdata["command"]
             if command == AUDIO_INPUT_COMMAND_START and stream_in.is_stopped():
