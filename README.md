@@ -29,6 +29,9 @@ The RoBud project is an attempt to pick up where Jibo and Ankni left off, and fu
 [Return to Table of Contents](#table-of-contents)
 
 ## Set-up Steps (draft outline)
+ - **TODO:**
+   - Add steps for updating configuration files. (maybe consolidate into one configruaton file) 
+ 
  - [X] Install 64bit RaspberryPi OS (for tensorflow)
    - hostname: robud.local
    - username: robud
@@ -103,20 +106,22 @@ The RoBud project is an attempt to pick up where Jibo and Ankni left off, and fu
     - sudo cp /home/robud/robud/services/robud.sensors.orientation.service /etc/systemd/system
     - sudo cp /home/robud/robud/services/robud.sensors.tof.service /etc/systemd/system
     - sudo cp /home/robud/robud/services/robud.robud_state.robud_state_manager.service /etc/systemd/system
-    - sudo cp /home/robud/robud/services/robud.sensors.camera.service /etc/systemd/system
+    - **Additional services added 23-May-2023**
+      - sudo cp /home/robud/robud/services/robud.ai.stt.service /etc/systemd/system
+      - sudo cp /home/robud/robud/services/robud.ai.wakeword_detection.service /etc/systemd/system 
+      - sudo cp /home/robud/robud/services/robud.sensors.camera.service /etc/systemd/system
+      - sudo cp /home/robud/robud/services/robud.robud_chatbot.chatgpt.robud_chatgpt.service /etc/systemd/system
+
     - sudo systemctl daemon-reload
-    - sudo systemctl enable [each service unit file]
-    - The following services need changes still to work RPi 12-Jan-2023
+    - sudo systemctl enable [each service]
+    - The following services need changes still to work RPi 23-May-2023
       - pulseaudio.service
       - robud.ai.object_detection.service
-      - robud.ai.stt.service
-      - robud.ai.wakeword_detection.service
       - robud.sensors.light_level.service
       - robud.sensors.odometry.service
       - robud.sensors.ultrasonics.service
     - [x] set up graphical autostart
       - mkdir /home/robud/.config/autostart
-      - ~~cp /home/robud/robud/robud_startup.sh /home/robud/.config/autostart~~
       - sudo nano /home/robud/.config/autostart/robud.desktop
         - 
         ```
