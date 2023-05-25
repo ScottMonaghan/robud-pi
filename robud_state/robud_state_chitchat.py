@@ -65,7 +65,7 @@ def robud_state_chitchat(mqtt_client:mqtt.Client, client_userdata:Dict):
                 userdata["waiting_for_user_chat_response"] = False
                 user_chat_response = message.payload.decode()
                 logger.info("stt output received: " + user_chat_response)
-                if re.search(user_chat_response,r'.*[goodbye|good\-bye].*',re.IGNORECASE):
+                if re.search(r'goodbye',user_chat_response,re.IGNORECASE):
                     mqtt_client.publish(topic=TOPIC_ROBUD_CHATGPT_END_CHAT, payload=True)
                     client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_IDLE")
                 else:
