@@ -45,7 +45,7 @@ if __name__ == "__main__":
         TOPIC_ROBUD_LOGGING_LOG_SIGNED = TOPIC_ROBUD_LOGGING_LOG + "/" + MQTT_CLIENT_NAME
         TOPIC_ROBUD_LOGGING_LOG_ALL = TOPIC_ROBUD_LOGGING_LOG + "/#"
         logger=logging.getLogger()
-        file_path = MQTT_CLIENT_NAME + datetime.now().strftime("%Y-%m-%d") + ".txt"
+        file_path = args.Output + datetime.now().strftime("%Y-%m-%d") + ".txt"
         directory = os.path.dirname(file_path)
         if not os.path.exists(directory):
             os.makedirs(directory)
