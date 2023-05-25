@@ -136,7 +136,8 @@ def on_message_user_message(client:mqtt.Client, userdata, message):
                 messages.append(retry_message)
                 logger.info("Robud: " + retry_message[chat_message.KEY_CONTENT])
                 client.publish(topic=TOPIC_ROBUD_CHATGPT_RESPONSE_MESSAGE, payload=retry_message[chat_message.KEY_CONTENT])
-                sleep(RETRY_SLEEP_DURATION)
+                #sleep(RETRY_SLEEP_DURATION)
+                return
         messages.append(response_message)
         logger.info("Robud: " + response_message[chat_message.KEY_CONTENT])
         client.publish(topic=TOPIC_ROBUD_CHATGPT_RESPONSE_MESSAGE, payload=response_message[chat_message.KEY_CONTENT])
