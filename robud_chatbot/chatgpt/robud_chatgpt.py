@@ -29,6 +29,7 @@ import logging
 import argparse
 from robud.robud_logging.MQTTHandler import MQTTHandler
 
+
 #initialize logger
 random.seed()
 
@@ -184,8 +185,16 @@ mqtt_client.message_callback_add(TOPIC_ROBUD_CHATGPT_USER_MESSAGE,on_message_use
 mqtt_client.message_callback_add(TOPIC_ROBUD_CHATGPT_END_CHAT,on_message_end_chat)
 
 logger.info('Waiting for messages...')
-mqtt_client.loop_forever()
-
+try: 
+    mqtt_client.loop_forever()
+except Exception as e:
+    logger.critical(str(e) + "\n" + traceback.format_exc())
+except KeyboardInterrupt:
+    logger.info("Exited with Keyboard Interrupt")
+    try:
+        sys.exit(0)
+    except SystemExit:
+        os._exit(0)
 # Begin chat
 
 # messages = [
