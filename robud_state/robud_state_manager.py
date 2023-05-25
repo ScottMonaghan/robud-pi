@@ -35,6 +35,11 @@ if __name__ == "__main__":
         MQTT_BROKER_ADDRESS = "robud.local"
         MQTT_CLIENT_NAME = "robud_state_manager.py" + str(random.randint(0,999999999))
 
+        #parse arguments
+        parser = argparse.ArgumentParser()
+        parser.add_argument("-o", "--Output", help="Log Ouput Prefix", default="logs/robud_state_manager_log_")
+        args = parser.parse_args()
+
         #initialize logger
         TOPIC_ROBUD_LOGGING_LOG = "robud/robud_logging/log"
         TOPIC_ROBUD_LOGGING_LOG_SIGNED = TOPIC_ROBUD_LOGGING_LOG + "/" + MQTT_CLIENT_NAME
