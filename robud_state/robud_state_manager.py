@@ -17,6 +17,9 @@ from robud.robud_state.robud_state_follow import robud_state_follow
 from robud.robud_state.robud_state_chitchat import robud_state_chitchat
 from robud.robud_state.robud_state_common import TOPIC_ROBUD_STATE, logger
 
+LOGGING_LEVEL = logging.DEBUG
+
+
 if __name__ == "__main__":
     try: 
         robud_state_functions = {
@@ -31,6 +34,21 @@ if __name__ == "__main__":
 
         MQTT_BROKER_ADDRESS = "robud.local"
         MQTT_CLIENT_NAME = "robud_state_manager.py" + str(random.randint(0,999999999))
+
+        #initialize logger
+        TOPIC_ROBUD_LOGGING_LOG = "robud/robud_logging/log"
+        TOPIC_ROBUD_LOGGING_LOG_SIGNED = TOPIC_ROBUD_LOGGING_LOG + "/" + MQTT_CLIENT_NAME
+        TOPIC_ROBUD_LOGGING_LOG_ALL = TOPIC_ROBUD_LOGGING_LOG + "/#"
+        logger=logging.getLogger()
+        file_path = MQTT_CLIENT_NAME + datetime.now().strftime("%Y-%m-%d") + ".txt"
+        directory = os.path.dirname(file_path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        log_file = open(file_path, "a")
+        myHandler = MQTTHandler(hostname=MQTT_BROKER_ADDRESS, topic=TOPIC_ROBUD_LOGGING_LOG_SIGNED, qos=2, log_file=log_file)
+        myHandler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s: %(filename)s: %(message)s'))
+        logger.addHandler(myHandler)
+        logger.level = LOGGING_LEVEL
 
         client_userdata = {}
         mqtt_client = mqtt.Client(client_id=MQTT_CLIENT_NAME, userdata=client_userdata)
