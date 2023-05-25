@@ -85,7 +85,7 @@ try:
         logger.debug(tts)
 
         #split tts out by sentences
-        sentences = re.split('[\.,;]\s*',tts)#tts.split(". ")
+        sentences = re.split('[\.,;\?\!]\s*',tts)#tts.split(". ")
         logger.debug(str(sentences))
         sentence_queue.extend(sentences)
         # for sentence in sentences:
