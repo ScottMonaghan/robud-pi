@@ -53,13 +53,13 @@ def robud_state_wakeword_detected(mqtt_client:mqtt.Client, client_userdata:Dict)
         def on_message_stt_output(client:mqtt.Client, userdata, message):
             text = message.payload.decode()
             logger.info("STT Output Received: " + text)
-            if re.search(text,'.*go to sleep.*') != None:
-                client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_SLEEPING")
-            elif re.search(text,'.*go exploring.*'):
-                client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_EXPLORING")
-            elif re.search(text,'.*follow me.*'):
+            # if re.search('go to sleep',text) != None:
+            #     client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_SLEEPING")
+            # elif re.search('go exploring',text):
+            #     client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_EXPLORING")
+            if re.search('follow me',text):
                 client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_FOLLOW")
-            elif re.search(text,'.*chat.*'):
+            elif re.search('chat',text):
                 client.publish(TOPIC_ROBUD_STATE, "ROBUD_STATE_CHITCHAT")
             else:
                 client.publish(TOPIC_QUESTIONS,qos=2, payload=text) 
