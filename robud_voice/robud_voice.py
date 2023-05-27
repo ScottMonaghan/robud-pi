@@ -9,7 +9,15 @@ from datetime import datetime
 import os
 import sys
 import traceback
-from robud.robud_voice.robud_voice_common import TOPIC_ROBUD_VOICE_TEXT_INPUT
+from robud.robud_voice.robud_voice_common import (
+    TOPIC_ROBUD_VOICE_TEXT_INPUT
+    , TOPIC_ROBUD_VOICE_DONE_GENERATING_SPEECH
+    , TOPIC_ROBUD_VOICE_CAPTIONS
+)
+from robud.robud_voice.robud_voice_config import (
+    MQTT_BROKER_ADDRESS
+    ,LOGGING_LEVEL
+)
 from robud.robud_audio.robud_audio_common import TOPIC_AUDIO_OUTPUT_DATA
 import numpy as np
 import librosa.effects
@@ -21,13 +29,11 @@ import re
 
 random.seed()
 
-MQTT_BROKER_ADDRESS = "robud.local"
 MQTT_CLIENT_NAME = "robud_voice.py" + str(random.randint(0,999999999))
 
 TOPIC_ROBUD_LOGGING_LOG = "robud/robud_logging/log"
 TOPIC_ROBUD_LOGGING_LOG_SIGNED = TOPIC_ROBUD_LOGGING_LOG + "/" + MQTT_CLIENT_NAME
 TOPIC_ROBUD_LOGGING_LOG_ALL = TOPIC_ROBUD_LOGGING_LOG + "/#"
-LOGGING_LEVEL = logging.INFO
 
 #parse arguments
 parser = argparse.ArgumentParser()
@@ -84,18 +90,10 @@ try:
         tts = message.payload.decode()
         logger.debug(tts)
 
-        #split tts out by sentences
+        #split tts out by sentences (which includes breaks with commas & semicolons)
         sentences = re.split('[\.,;\?\!]\s*',tts)#tts.split(". ")
         logger.debug(str(sentences))
         sentence_queue.extend(sentences)
-        # for sentence in sentences:
-        #     result = subprocess.run(args=['espeak-ng', '-m', '-v', 'en-us-1', '-s', '155', '-p', '100', sentence, '--stdout'], stdout=subprocess.PIPE) #, shell=True)
-        #     speech = result.stdout[result.stdout.find(b'data')+8:]
-        #     speech = resample(speech,22050,16000)
-    
-        #     speech = pitch_shift(speech,16000,6)
-        #     client.publish(topic=TOPIC_AUDIO_OUTPUT_DATA,payload=speech)
-        #     sleep(2)
  
     client_userdata = {}
     mqtt_client = mqtt.Client(client_id=MQTT_CLIENT_NAME,userdata=client_userdata)
@@ -107,16 +105,22 @@ try:
     mqtt_client.loop_start()
 
     while True:
+        generating_speech= False
         while len(sentence_queue) > 0:
+            generating_speech = True
             sentence = sentence_queue.popleft()
             result = subprocess.run(args=['espeak-ng', '-m', '-v', 'en-us-1', '-s', '155', '-p', '100', sentence, '--stdout'], stdout=subprocess.PIPE) #, shell=True)
             speech = result.stdout[result.stdout.find(b'data')+8:]
-            speech = resample(speech,22050,16000)
-    
+            speech = resample(speech,22050,16000)    
             speech = pitch_shift(speech,16000,6)
+            mqtt_client.publish(topic=TOPIC_ROBUD_VOICE_CAPTIONS,payload=sentence)
             mqtt_client.publish(topic=TOPIC_AUDIO_OUTPUT_DATA,payload=speech)
             #sleep(2)
+        if generating_speech:
+            generating_speech=False
+            mqtt_client.publish(topic=TOPIC_ROBUD_VOICE_DONE_GENERATING_SPEECH, payload=True)
         sleep(0.1)
+
 except Exception as e:
     logger.critical(str(e) + "\n" + traceback.format_exc())
 except KeyboardInterrupt:

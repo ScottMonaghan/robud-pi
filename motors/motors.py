@@ -101,11 +101,15 @@ try:
     kit = None
     servokit = None
     head_servo = None
-    try:
-        kit = MotorKit() #need frequency of 50hz for servo
-        servokit = ServoKit(channels=16, address = 0x41)
-    except Exception as e:
-        logger.warning(str(e) + "\n" + traceback.format_exc())
+    while servokit is None: 
+        try:
+            kit = MotorKit() #need frequency of 50hz for servo
+            servokit = ServoKit(channels=16, address = 0x41)
+        except Exception as e:
+            logger.warning(str(e) + "\n" + traceback.format_exc())
+            logger.warning('Retrying in 1 sec...')
+            sleep(1)
+
 
     try:
         head_servo = servokit.servo[15]

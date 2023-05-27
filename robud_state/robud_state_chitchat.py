@@ -22,7 +22,7 @@ from robud.robud_state.robud_state_common import (
 from robud.robud_face.robud_face_common import *
 from robud.ai.object_detection_common import TOPIC_OBJECT_DETECTION_DETECTIONS
 from robud.motors.motors_common import TOPIC_HEAD_SERVO_ANGLE
-from robud.robud_voice.robud_voice_common import TOPIC_ROBUD_VOICE_TEXT_INPUT
+from robud.robud_voice.robud_voice_common import TOPIC_ROBUD_VOICE_TEXT_INPUT, TOPIC_ROBUD_VOICE_DONE_GENERATING_SPEECH
 from robud.sensors.camera_common import CAMERA_HEIGHT, CAMERA_WIDTH
 from robud.sensors.tof_common import TOPIC_SENSORS_TOF_RANGE
 from robud.sensors.light_level_common import TOPIC_SENSORS_LIGHT_LEVEL
@@ -76,8 +76,13 @@ def robud_state_chitchat(mqtt_client:mqtt.Client, client_userdata:Dict):
             response_message = message.payload.decode()
             logger.info("chatgpt_response message received: " + response_message)
             mqtt_client.publish(topic=TOPIC_ROBUD_VOICE_TEXT_INPUT, payload=response_message)
-            userdata["waiting_for_output_audio_to_complete"]=True
+            userdata["waiting_for_speech_generation_to_complete"] = True
 
+        def on_message_done_generating_speech(client:mqtt.Client, userdata, message):
+            if userdata["waiting_for_speech_generation_to_complete"]:
+                userdata["waiting_for_speech_generation_to_complete"] = False
+                userdata["waiting_for_output_audio_to_complete"]=True
+                
         def on_message_audio_output_stopped(client:mqtt.Client, userdata, message):
             if userdata["waiting_for_output_audio_to_complete"]:
                 userdata["waiting_for_output_audio_to_complete"] = False
@@ -103,6 +108,10 @@ def robud_state_chitchat(mqtt_client:mqtt.Client, client_userdata:Dict):
         mqtt_client.subscribe(TOPIC_AUDIO_OUTPUT_STOPPED)
         mqtt_client.message_callback_add(TOPIC_AUDIO_OUTPUT_STOPPED,on_message_audio_output_stopped)
         logger.info('Subcribed to ' + TOPIC_AUDIO_OUTPUT_STOPPED)
+
+        mqtt_client.subscribe(TOPIC_ROBUD_VOICE_DONE_GENERATING_SPEECH)
+        mqtt_client.message_callback_add(TOPIC_ROBUD_VOICE_DONE_GENERATING_SPEECH,on_message_done_generating_speech)
+        logger.info('Subcribed to ' + TOPIC_ROBUD_VOICE_DONE_GENERATING_SPEECH)
 
 
         #Start interaction animation
@@ -130,6 +139,7 @@ def robud_state_chitchat(mqtt_client:mqtt.Client, client_userdata:Dict):
 
         #start chat
         client_userdata["waiting_for_user_chat_response"] = False
+        client_userdata["waiting_for_speech_generation_to_complete"] = False
         client_userdata["waiting_for_output_audio_to_complete"] = False
         mqtt_client.publish(topic=TOPIC_ROBUD_CHATGPT_NEW_CHAT, payload="")
         logger.info("TOPIC_ROBUD_CHATGPT_NEW_CHAT message published")

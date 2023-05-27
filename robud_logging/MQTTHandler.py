@@ -43,4 +43,4 @@ class MQTTHandler(logging.Handler):
             self.log_file.write(msg + "\n")
             self.log_file.flush()
             
-        print(msg)
+        print(msg.encode('utf-8'))
