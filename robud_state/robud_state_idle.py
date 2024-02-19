@@ -70,7 +70,7 @@ def robud_state_idle(mqtt_client:mqtt.Client, client_userdata:Dict):
         recognized_objects = {}
         #tof_range = -1
         #light_level = 255
-        head_angle = None
+        head_angle = 90
         #client_userdata["tof_range"] = tof_range
         #client_userdata["light_level"] = light_level
         client_userdata["head_angle"] = head_angle
